@@ -1,0 +1,74 @@
+---
+import Icon from "./Icon.astro";
+
+interface NavLink {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  name?: string;
+  nameHref?: string;
+  links: readonly NavLink[];
+}
+
+const { name = "Henry Wang", nameHref = "#main-content", links } = Astro.props;
+---
+
+<header class="site-header" data-site-header>
+  <a class="site-name" href={nameHref}>{name}</a>
+
+  <nav class="desktop-navigation" aria-label="Primary navigation">
+    {links.map((link) => <a href={link.href}>{link.label}</a>)}
+  </nav>
+
+  <button
+    type="button"
+    class="mobile-menu-trigger"
+    aria-label="Open navigation"
+    aria-expanded="false"
+    aria-controls="mobile-navigation"
+  >
+    <span class="mobile-menu-icon mobile-menu-icon--open"><Icon name="menu-2" /></span>
+    <span class="mobile-menu-icon mobile-menu-icon--close"><Icon name="x" /></span>
+  </button>
+
+  <nav id="mobile-navigation" class="mobile-navigation" aria-label="Mobile navigation">
+    {
+      links.map((link, index) => (
+        <a
+          href={link.href}
+          style={`--item-index: ${index}; --item-reverse-index: ${links.length - 1 - index}`}
+        >
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>
+
+<script>
+  for (const header of document.querySelectorAll<HTMLElement>("[data-site-header]")) {
+    const trigger = header.querySelector<HTMLButtonElement>(".mobile-menu-trigger");
+    if (!trigger) continue;
+
+    const setOpen = (open: boolean) => {
+      header.toggleAttribute("data-open", open);
+      trigger.setAttribute("aria-expanded", String(open));
+      trigger.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+    };
+
+    trigger.addEventListener("click", () => setOpen(!header.hasAttribute("data-open")));
+    for (const link of header.querySelectorAll(".mobile-navigation a")) {
+      link.addEventListener("click", () => setOpen(false));
+    }
+    window.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape" || !header.hasAttribute("data-open")) return;
+      setOpen(false);
+      trigger.focus();
+    });
+    document.addEventListener("pointerdown", (event) => {
+      if (event.target instanceof Node && !header.contains(event.target)) setOpen(false);
+    });
+  }
+</script>

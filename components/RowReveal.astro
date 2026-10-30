@@ -1,0 +1,22 @@
+---
+interface Props {
+  class: string;
+  /** Seconds before the rule draws. */
+  delay?: number;
+}
+
+const { class: className, delay = 0 } = Astro.props;
+---
+
+<div
+  class={className}
+  data-reveal-row
+  style={delay ? `--reveal-delay: ${Math.round(delay * 1000)}ms` : undefined}
+>
+  <span class="motion-rule" aria-hidden="true"></span>
+  <div class="motion-row-content"><slot /></div>
+</div>
+
+<script>
+  import "./reveal-observer.ts";
+</script>

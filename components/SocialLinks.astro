@@ -1,0 +1,41 @@
+---
+import ExternalLink from "./ExternalLink.astro";
+import Icon, { type IconName } from "./Icon.astro";
+
+interface SocialLink {
+  href: string;
+  icon: IconName;
+  label: string;
+}
+
+interface Props {
+  class?: string;
+  links?: SocialLink[];
+}
+
+const HENRY_LINKS: SocialLink[] = [
+  {
+    href: "https://github.com/HenryQW",
+    icon: "brand-github",
+    label: "GitHub profile",
+  },
+  { href: "https://x.com/thehqw", icon: "brand-x", label: "X profile" },
+  {
+    href: "https://www.linkedin.com/in/henryqw/",
+    icon: "brand-linkedin",
+    label: "LinkedIn profile",
+  },
+];
+
+const { class: className, links = HENRY_LINKS } = Astro.props;
+---
+
+<div class:list={["social-links", className]} data-type="social">
+  {
+    links.map(({ href, icon, label }) => (
+      <ExternalLink href={href} aria-label={label} class="social-icon-link">
+        <Icon name={icon} class="social-icon" stroke={1.7} />
+      </ExternalLink>
+    ))
+  }
+</div>

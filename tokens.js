@@ -1,0 +1,22 @@
+// Same values as tokens.css, for config files that need strings (for example blume.config.ts).
+export const colors = {
+  background: "oklch(0.949 0.007 88.6)",
+  foreground: "oklch(0.21 0.034 263.4)",
+  surface: "oklch(0.919 0.008 91.5)",
+  muted: "oklch(0.45 0.028 259.8)",
+  accent: "oklch(0.488 0.217 264.4)",
+  accentSoft: "oklch(0.77 0.116 264.4)",
+  border: "oklch(0.21 0.034 263.4 / 0.141)",
+  inverseBackground: "oklch(0.21 0.034 263.4)",
+  inverseRaised: "oklch(0.26 0.045 263.4)",
+  inverseForeground: "oklch(0.949 0.007 88.6)",
+  inverseMuted: "oklch(0.86 0.012 264.5)",
+  inverseBorder: "oklch(0.949 0.007 88.6 / 0.18)",
+  footerMuted: "oklch(0.949 0.007 88.6 / 0.851)",
+  stream1: "oklch(0.91 0.041 264.4)",
+  stream2: "oklch(0.84 0.072 264.4)",
+  stream3: "oklch(0.77 0.105 264.4)",
+  stream4: "oklch(0.69 0.139 264.4)",
+  stream5: "oklch(0.61 0.176 264.4)",
+  stream6: "oklch(0.52 0.211 264.4)",
+};

@@ -1,0 +1,18 @@
+/* Maps Henry tokens to Blume variables. Import after tokens.css in a Blume theme.css. */
+:root {
+  --blume-foreground: var(--ui-foreground);
+  --blume-muted: var(--ui-surface);
+  --blume-muted-foreground: var(--ui-muted);
+  --blume-border: var(--ui-border);
+  --blume-accent-foreground: var(--ui-background);
+  --blume-code-background: var(--ui-surface);
+}
+
+:root[data-theme="dark"] {
+  --blume-foreground: var(--ui-inverse-foreground);
+  --blume-muted: var(--ui-inverse-raised);
+  --blume-muted-foreground: var(--ui-inverse-muted);
+  --blume-border: var(--ui-inverse-border);
+  --blume-accent-foreground: var(--ui-inverse-background);
+  --blume-code-background: var(--ui-inverse-raised);
+}

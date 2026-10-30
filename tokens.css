@@ -1,0 +1,24 @@
+/* Henry style tokens. Custom properties only, so any site can import this file. */
+:root {
+  --ui-font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --ui-ease-out: cubic-bezier(0.25, 1, 0.5, 1);
+  --ui-background: oklch(0.949 0.007 88.6);
+  --ui-foreground: oklch(0.21 0.034 263.4);
+  --ui-surface: oklch(0.919 0.008 91.5);
+  --ui-muted: oklch(0.45 0.028 259.8);
+  --ui-accent: oklch(0.488 0.217 264.4);
+  --ui-accent-soft: oklch(0.77 0.116 264.4);
+  --ui-border: oklch(0.21 0.034 263.4 / 0.141);
+  --ui-inverse-background: oklch(0.21 0.034 263.4);
+  --ui-inverse-raised: oklch(0.26 0.045 263.4);
+  --ui-inverse-foreground: oklch(0.949 0.007 88.6);
+  --ui-inverse-muted: oklch(0.86 0.012 264.5);
+  --ui-inverse-border: oklch(0.949 0.007 88.6 / 0.18);
+  --ui-footer-muted: oklch(0.949 0.007 88.6 / 0.851);
+  --ui-stream-1: oklch(0.91 0.041 264.4);
+  --ui-stream-2: oklch(0.84 0.072 264.4);
+  --ui-stream-3: oklch(0.77 0.105 264.4);
+  --ui-stream-4: oklch(0.69 0.139 264.4);
+  --ui-stream-5: oklch(0.61 0.176 264.4);
+  --ui-stream-6: oklch(0.52 0.211 264.4);
+}

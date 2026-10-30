@@ -1,0 +1,36 @@
+{
+  "name": "@henryqw/theme",
+  "version": "0.1.0",
+  "description": "Henry style: tokens, base styles, and Astro components for Henry Wang's sites.",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenryQW/resume.git",
+    "directory": "packages/theme"
+  },
+  "files": [
+    "*.css",
+    "*.js",
+    "*.d.ts",
+    "components"
+  ],
+  "exports": {
+    "./tokens.css": "./tokens.css",
+    "./base.css": "./base.css",
+    "./components.css": "./components.css",
+    "./blume.css": "./blume.css",
+    "./tokens": {
+      "types": "./tokens.d.ts",
+      "default": "./tokens.js"
+    },
+    "./fonts": "./fonts.js",
+    "./components/*": "./components/*"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "peerDependencies": {
+    "astro": "^7.3.2"
+  }
+}

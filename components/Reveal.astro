@@ -1,0 +1,46 @@
+---
+import type { HTMLTag } from "astro/types";
+
+export type RevealVariant =
+  | "fade"
+  | "heading"
+  | "hero-name"
+  | "portrait"
+  | "nudge"
+  | "line";
+
+interface Props {
+  as?: HTMLTag;
+  class?: string;
+  /** Seconds before the animation starts. */
+  delay?: number;
+  /** "load" animates on page load with CSS only; "view" waits until the element scrolls into view. */
+  mode?: "load" | "view";
+  variant?: RevealVariant;
+  /** Visible fraction that triggers a "view" reveal. */
+  amount?: number;
+}
+
+const {
+  as: Tag = "div",
+  class: className,
+  delay = 0,
+  mode = "view",
+  variant = "fade",
+  amount,
+} = Astro.props;
+---
+
+<Tag
+  class={className}
+  data-reveal={variant}
+  data-reveal-mode={mode}
+  data-reveal-amount={amount}
+  style={delay ? `--reveal-delay: ${Math.round(delay * 1000)}ms` : undefined}
+>
+  <slot />
+</Tag>
+
+<script>
+  import "./reveal-observer.ts";
+</script>
