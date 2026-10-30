@@ -24,7 +24,10 @@
       "types": "./tokens.d.ts",
       "default": "./tokens.js"
     },
-    "./fonts": "./fonts.js",
+    "./fonts": {
+      "types": "./fonts.d.ts",
+      "default": "./fonts.js"
+    },
     "./components/*": "./components/*"
   },
   "scripts": {
@@ -32,5 +35,13 @@
   },
   "peerDependencies": {
     "astro": "^7.3.2"
+  },
+  "peerDependenciesMeta": {
+    "astro": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

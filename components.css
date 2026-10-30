@@ -461,4 +461,14 @@
   .site-footer {
     display: none;
   }
+
+  /* Print sections the reader has not scrolled to yet. */
+  [data-reveal-mode="view"]:not([data-revealed]),
+  [data-reveal-row]:not([data-revealed]) > .motion-rule,
+  [data-reveal-row]:not([data-revealed]) > .motion-row-content {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+    transition: none;
+  }
 }
