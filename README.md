@@ -1,7 +1,7 @@
 # @henryqw/theme
 
 Henry style for Henry Wang's sites: color tokens, base styles, and Astro components.
-The design system is described in [DESIGN.md](https://github.com/HenryQW/resume/blob/main/DESIGN.md).
+Used by [henry.wang](https://henry.wang) and [pi.henry.wang](https://pi.henry.wang).
 
 ## Files
 
@@ -51,3 +51,22 @@ import { colors } from "@henryqw/theme/tokens";
 
 `Reveal` and `RowReveal` animate with CSS. A "view" reveal starts hidden only when scripts
 run and the reader allows motion, so content stays visible without JavaScript.
+
+## Development
+
+```bash
+npm test
+```
+
+To try a change in a site before a release, link the local copy from the site:
+`pnpm link /path/to/theme`, then remove the link when done.
+
+## Release
+
+1. Update `version` in `package.json` and commit.
+2. `npm publish` (scoped package; `publishConfig.access` is `public`).
+3. `git tag v<version> && git push --tags`.
+
+## License
+
+MIT

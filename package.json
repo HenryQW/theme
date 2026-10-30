@@ -6,8 +6,11 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HenryQW/resume.git",
-    "directory": "packages/theme"
+    "url": "git+https://github.com/HenryQW/theme.git"
+  },
+  "homepage": "https://github.com/HenryQW/theme#readme",
+  "bugs": {
+    "url": "https://github.com/HenryQW/theme/issues"
   },
   "files": [
     "*.css",
