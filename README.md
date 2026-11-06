@@ -13,7 +13,7 @@ Used by [henry.wang](https://henry.wang) and [pi.henry.wang](https://pi.henry.wa
 | `@henryqw/theme/blume.css` | Maps the tokens to Blume `--blume-*` variables (light and dark). |
 | `@henryqw/theme/tokens` | The same colors as strings, for config files such as `blume.config.ts`. |
 | `@henryqw/theme/fonts` | `geist`, the Geist entry for the Astro `fonts` config. |
-| `@henryqw/theme/projects` | Henry's projects. `projectLinks(site)` gives Blume footer links to the others. |
+| `@henryqw/theme/projects` | Henry's projects and the author line. `footer(site, repo)` is the whole Blume `footer` of a project site. |
 
 Components (`@henryqw/theme/components/*.astro`): `SiteHeader`, `Footer`, `SocialLinks`,
 `ExternalLink`, `Icon`, `Reveal`, `RowReveal`.
