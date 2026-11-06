@@ -1,0 +1,36 @@
+name: Publish
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: npm-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - run: npm test
+      # Publishes only a version that npm does not have yet, with npm trusted publishing (no token).
+      - name: Publish a new version
+        run: |
+          set -euo pipefail
+          version="$(node -p 'require("./package.json").version')"
+          if npm view "@henryqw/theme@$version" version >/dev/null 2>&1; then
+            echo "@henryqw/theme@$version is already on npm."
+            exit 0
+          fi
+          npm publish
+          git tag "v$version"
+          git push origin "v$version"

@@ -64,9 +64,8 @@ To try a change in a site before a release, link the local copy from the site:
 
 ## Release
 
-1. Update `version` in `package.json` and commit.
-2. `npm publish` (scoped package; `publishConfig.access` is `public`).
-3. `git tag v<version> && git push --tags`.
+1. Update `version` in `package.json` and merge to `main`.
+2. The Publish workflow runs the tests, publishes the new version to npm (trusted publishing, no token) and pushes the tag `v<version>`. A push that keeps the version publishes nothing.
 
 ## License
 
