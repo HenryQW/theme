@@ -1,6 +1,6 @@
 {
   "name": "@henryqw/theme",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Henry style: tokens, base styles, and Astro components for Henry Wang's sites.",
   "license": "MIT",
   "type": "module",
@@ -30,6 +30,10 @@
     "./fonts": {
       "types": "./fonts.d.ts",
       "default": "./fonts.js"
+    },
+    "./projects": {
+      "types": "./projects.d.ts",
+      "default": "./projects.js"
     },
     "./components/*": "./components/*"
   },
